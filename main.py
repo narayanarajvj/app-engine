@@ -28,7 +28,7 @@ def main():
     cnx = psycopg2.connect(dbname=db_name, user=db_user,
                            password=db_password, host=host)
     with cnx.cursor() as cursor:
-        cursor.execute('SELECT NOW() as now;')
+        cursor.execute('SELECT content FROM entries;')
         result = cursor.fetchall()
     current_time = result[0][0]
     cnx.commit()
