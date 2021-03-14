@@ -30,7 +30,7 @@ def main():
     with cnx.cursor() as cursor:
         cursor.execute('SELECT content FROM entries;')
         result = cursor.fetchall()
-    current_time = result[0][1]
+    current_time = result[][0]
     cnx.commit()
     cnx.close()
 
